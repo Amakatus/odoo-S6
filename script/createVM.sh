@@ -61,3 +61,7 @@ ssh root@$2 "apt-get install sudo"
 ssh root@$2 "usermod -aG sudo user"
 
 vmiut restart $1
+
+sleep 20
+
+chmod u
