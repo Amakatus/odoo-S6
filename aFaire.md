@@ -125,3 +125,12 @@ services:
 ```
 
 
+
+
+Script:
+-Script lancement (créé 4 machines)
+-script créé machine
+-script odoo
+-script docker
+-script save
+-script traefik
