@@ -18,7 +18,7 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 mkdir -p /etc/systemd/system/docker.service.d
 
-mv /home/user/config/fichierDocker/http-proxy.conf /etc/systemd/system/docker.service.d/
+printf "[Service]\nEnvironment="HTTP_PROXY=http://cache.univ-lille.fr:3128"\nEnvironment="HTTPS_PROXY=http://cache.univ-lille.fr:3128"\nEnvironment="http_proxy=http://cache.univ-lille.fr:3128"\nEnvironment="https_proxy=http://cache.univ-lille.fr:3128"\nEnvironment="NO_PROXY=localhost,192.168.194.0/24,172.18.48.0/22"" > /etc/systemd/system/docker.service.d/http-proxy.conf
 
 systemctl daemon-reload
 
@@ -26,9 +26,9 @@ systemctl restart docker
 
 mv /home/user/config/fichierDocker/daemon.json /etc/docker/
 
-mkdir /root/.docker
+mkdir .docker
 
-mv /home/user/config/fichierDocker/config.json /root/.docker/
+mv /home/user/config/fichierDocker/config.json .docker/
 
 systemctl daemon-reload
 

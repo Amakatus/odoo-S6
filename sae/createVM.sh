@@ -40,3 +40,5 @@ then
 fi
 
 echo "fin"
+
+#modifier le mot de passe root et user
