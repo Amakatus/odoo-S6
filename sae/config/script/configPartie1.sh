@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #On modifie l'adresse IP du fichier interface par l'adresse IP en paramettre 
 sed -i -e "s/192.168.194.xx/$2/g" /home/user/config/fichierBasique/interfaces
 
