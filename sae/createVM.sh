@@ -34,7 +34,7 @@ then
     ssh user@$ipMachine "su -c 'source ./config/script/installPostgres.sh'"
 elif [ $3=="save"]
 then
-    ssh user@$ipMachine "su -c 'source ./config/script/installSave.sh'"
+    #ssh user@$ipMachine "su -c 'source ./config/script/installSave.sh'"
 fi
 echo "fin"
 
