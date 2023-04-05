@@ -15,6 +15,8 @@ done
 #On récupére l'adresse ip de la machine
 ipMachine=$(vmiut info $1 | grep ip-possible= | cut -c 13- )
 
+type=$3
+
 echo "Répondre yes et insérer le mot de passe utilisateur  afin de continuer l'installation lorsque le terminal vous le demandera"
 
 ssh-copy-id user@$ipMachine
@@ -26,29 +28,21 @@ vmiut restart $1
 
 until ssh user@$2 "su -c 'echo salut'"
 do
-    sleep 1
+    sleep 10
 done
 
-if [[ "$3"=="odoo" ]]
+if [[ "$type"=="odoo" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installDocker.sh'"
     vmiut restart $1
     #sleep 30
     #ssh root@$2 "su -c source installOdoo.sh"
-fi
-
-if [[ "$3"=="postgres" ]]
+elif [[ "$type"=="postgres" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installPostgres.sh'"
-    echo "POSTGRES"
-    echo "POSTGRES"
-    echo "POSTGRES"
-    echo "POSTGRES"
-fi
-
-if [[ "$3"=="save" ]]
-then
-    ssh user@$2 "su -c 'source ./config/script/installSave.sh'"
+else
+    echo "test"
+    #ssh user@$2 "su -c 'source ./config/script/installSave.sh'"
 fi
 echo "fin"
 
