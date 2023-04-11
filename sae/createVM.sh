@@ -26,20 +26,26 @@ ssh user@$ipMachine "su -c 'source ./config/script/configPartie1.sh $1 $2'"
 ssh user@$ipMachine "su -c 'source ./config/script/configPartie2.sh'"
 vmiut restart $1
 
-until ssh user@$2 "su -c 'echo salut'"
+until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
 do
     sleep 10
 done
 
-if [[ "$type"=="odoo" ]]
+echo $type
+echo $3
+
+if [[ "$type" = "odoo" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installDocker.sh'"
     vmiut restart $1
     #sleep 30
     #ssh root@$2 "su -c source installOdoo.sh"
-elif [[ "$type"=="postgres" ]]
+    echo POURQUOI
+elif [[ "$type" = "postgres" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installPostgres.sh'"
+    ssh user@$2 "su -c 'source sudo -u postgres -i -c '/home/user/config/script/save.sh''"
+    echo CA MARCHE
 else
     echo "test"
     #ssh user@$2 "su -c 'source ./config/script/installSave.sh'"

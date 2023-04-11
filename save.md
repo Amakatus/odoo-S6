@@ -21,3 +21,10 @@ pg_dump --format=plain --create --file admin2.sql admin
 
 psql --file admin2.sql admin2
 ```
+
+
+faire un super utilisateur
+se connecter au base
+dump
+metre un pgpass sur postgres
+rsync depuis save
