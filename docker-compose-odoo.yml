@@ -1,0 +1,27 @@
+services:
+  droit:
+    image: odoo:14.0
+    user: root
+    volumes:
+      - ./odoo-data:/var/lib/odoo
+    command: chown -R odoo:odoo /var/lib/odoo
+
+  web:
+    image: odoo:14.0
+    ports:
+      - "80:8069"
+    volumes:
+      - ./odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+    depends_on:
+      droit:
+        condition: service_completed_successfully
+    networks:
+      - net_traefik
+    labels:
+      - traefik.http.routers.odoo-web-1.rule=Host(`odoo1.acajou13.iutinfo.fr.localhost`)
+      - traefik.http.services.odoo-web-1.loadbalancer.port=8069
+
+networks:
+  net_traefik:
+    external: true

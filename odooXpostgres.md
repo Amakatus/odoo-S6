@@ -96,8 +96,8 @@ services:
 Allez dans config:
 ```bash
 root@odoo:~/# cd config
-root@odoo:/docker-compose/config# touch odoo.conf
-root@odoo:/docker-compose/config# nano odoo.conf
+root@odoo:/docker-compose/config# touch odo.conf
+root@odoo:/docker-compose/config# nano odo.conf
 ```
 
 ```bash
@@ -113,5 +113,5 @@ db_name = NOMDB
 revenir dans docker-compose
 
 ```bash
-docker compose run web -i NOMDB
+docker compose run web -d NOMDB
 ```

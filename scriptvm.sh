@@ -1,0 +1,3 @@
+#!/bin/bash
+
+vmiut creer 
