@@ -34,7 +34,7 @@ done
 if [[ "$type" = "odoo" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/script/installDocker.sh'"
-    ssh -t user@$2 "su -c 'source ./config/script/traefik.sh'"
+    #ssh -t user@$2 "su -c 'source ./config/script/traefik.sh'"
 elif [[ "$type" = "postgres" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/script/installPostgres.sh $2 $4 $5'"
