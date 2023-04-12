@@ -8,6 +8,6 @@ echo "Nom machine 3:" && read name3
 echo "IP machine 3:" && read ip3
 
 
-./createVM.sh $name1 $ip1 postgres
-./createVM.sh $name2 $ip2
+./createVM.sh $name1 $ip1 postgres $ip2 $ip3
+./createVM.sh $name2 $ip2 save $ip1
 ./createVM.sh $name3 $ip3 odoo

@@ -22,8 +22,8 @@ echo "Répondre yes et insérer le mot de passe utilisateur  afin de continuer l
 ssh-copy-id user@$ipMachine
 
 scp -r ./config user@$ipMachine:./
-ssh user@$ipMachine "su -c 'source ./config/script/configPartie1.sh $1 $2'"
-ssh user@$ipMachine "su -c 'source ./config/script/configPartie2.sh'"
+ssh -t user@$ipMachine "su -c 'source ./config/script/configPartie1.sh $1 $2'"
+ssh -t user@$ipMachine "su -c 'source ./config/script/configPartie2.sh'"
 vmiut restart $1
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
@@ -31,19 +31,19 @@ do
     sleep 10
 done
 
-echo $type
-echo $3
-
 if [[ "$type" = "odoo" ]]
 then
-    ssh user@$2 "su -c 'source ./config/script/installDocker.sh'"
-    ssh user@$2 "su -c 'source ./config/script/traefik.sh'"
+    ssh -t user@$2 "su -c 'source ./config/script/installDocker.sh'"
+    ssh -t user@$2 "su -c 'source ./config/script/traefik.sh'"
 elif [[ "$type" = "postgres" ]]
 then
-    ssh user@$2 "su -c 'source ./config/script/installPostgres.sh'"
-    ssh user@$2 "su -c 'source sudo -u postgres -i -c '/home/user/config/script/save.sh''"
+    ssh -t user@$2 "su -c 'source ./config/script/installPostgres.sh $2 $4 $5'"
+    ssh -t user@$2 "su -c 'source ./config/script/save.sh''"
+elif [[ "$type" = "save" ]]
+then
+    ssh -t user@$2 "su -c 'source ./config/script/rsync.sh $4'"
 else
-    ssh user@$2 "su -c 'source ./config/script/rsync.sh'"
+    echo "probleme"
 fi
 echo "fin"
 

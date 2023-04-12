@@ -2,4 +2,8 @@ apt-get install -y rsync
 
 systemctl start rsync
 
-rsync -r -za user@192.168.194.16:dbsave/ ./
+ssh-keygen 
+
+ssh-copy-id user@$1
+
+rsync -r -za user@$1:dbsave/ ./
