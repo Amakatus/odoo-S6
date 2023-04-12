@@ -4,7 +4,7 @@ docker network create net_traefik
 
 mkdir traefik
 
-cp /home/user/config/fichierOdoo/docker-compose-reverse.yml traefik/
+cp /home/user/config/fichierTraefik/docker-compose.yml traefik/
 
 cd traefik/
 
