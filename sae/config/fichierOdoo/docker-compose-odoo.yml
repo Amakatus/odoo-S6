@@ -19,7 +19,7 @@ services:
     networks:
       - net_traefik
     labels:
-      - traefik.http.routers.odoo-web-1.rule=Host(`odoo1.acajou13.iutinfo.fr.localhost`)
+      - traefik.http.routers.odoo-web-1.rule=Host(`odoo1.acajou25.iutinfo.fr`)
       - traefik.http.services.odoo-web-1.loadbalancer.port=8069
 
 networks:

@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ -a ./listeDB.txt ]
 then
     for nomDB in 'cat listeDB.txt'
