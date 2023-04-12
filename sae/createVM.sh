@@ -49,3 +49,5 @@ fi
 echo "fin"
 
 #modifier le mot de passe root et user
+
+ssh -t user@192.168.194.47 "su -c 'source ./config/scriptCreateVM/traefik.sh'"
