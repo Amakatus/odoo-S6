@@ -1,12 +1,16 @@
 #!/bin/bash
 
-mkdir /$1
+echo "Nom Client :" && read nomClient
 
-mkdir /$1/config
+mkdir ./$nomClient
 
-mkdir /$1/odoo-data
+mkdir ./$nomClient/config
 
-cp /home/user/config/fichierOdoo/docker-compose.yml /$1/
+mkdir ./$nomClient/odoo-data
 
-cp /home/user/config/fichierOdoo/odoo.conf /$1/config/
+cp /home/user/config/fichierOdoo/docker-compose-odoo.yml ./$nomClient/
+
+cp /home/user/config/fichierOdoo/odoo.conf ./$nomClient/config/
+
+sed xxxxx->nomClient
 

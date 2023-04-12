@@ -37,18 +37,13 @@ echo $3
 if [[ "$type" = "odoo" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installDocker.sh'"
-    vmiut restart $1
-    #sleep 30
-    #ssh root@$2 "su -c source installOdoo.sh"
-    echo POURQUOI
+    ssh user@$2 "su -c 'source ./config/script/traefik.sh'"
 elif [[ "$type" = "postgres" ]]
 then
     ssh user@$2 "su -c 'source ./config/script/installPostgres.sh'"
     ssh user@$2 "su -c 'source sudo -u postgres -i -c '/home/user/config/script/save.sh''"
-    echo CA MARCHE
 else
-    echo "test"
-    #ssh user@$2 "su -c 'source ./config/script/installSave.sh'"
+    ssh user@$2 "su -c 'source ./config/script/rsync.sh'"
 fi
 echo "fin"
 
