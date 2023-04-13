@@ -21,9 +21,9 @@ echo "Répondre yes et insérer le mot de passe utilisateur  afin de continuer l
 
 ssh-copy-id user@$ipMachine
 
-scp -r ../../config user@$ipMachine:./
-ssh -t user@$ipMachine "su -c 'source ./configPartie1.sh $1 $2'"
-ssh -t user@$ipMachine "su -c 'source ./configPartie2.sh'"
+scp -r ./config user@$ipMachine:./
+ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $1 $2'"
+ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie2.sh'"
 vmiut restart $1
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
@@ -33,18 +33,19 @@ done
 
 if [[ "$type" = "odoo" ]]
 then
-    ssh -t user@$2 "su -c 'source ./installDocker.sh'"
-    ssh -t user@$2 "su -c 'source ./traefik.sh'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installDocker.sh'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/traefik.sh'"
 elif [[ "$type" = "postgres" ]]
 then
-    ssh -t user@$2 "su -c 'source ./installPostgres.sh $2 $4 $5'"
-    ssh -t user@$2 "su -c 'source ./createSuperUser.sh'"
-    ssh -t user@$2 "su -c 'source ./installSave.sh'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installPostgres.sh $2 $4 $5'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/createSuperUser.sh'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installSave.sh'"
 elif [[ "$type" = "save" ]]
 then
-    ssh -t user@$2 "su -c 'source ./rsync.sh $4'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/rsync.sh $4'"
 else
     echo "probleme"
 fi
 echo "fin"
 
+#modifier le mot de passe root et user

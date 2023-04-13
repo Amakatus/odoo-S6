@@ -15,6 +15,6 @@ echo $adressIP3 > ./config/ip/ipODOO.txt
 cat ./config/fichierBasique/config >> ~/.ssh/config
 sed -i -e "s/xxxx/$adressIP1/g" ~/.ssh/config
 
-./config/scriptCreateVM/createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
-./config/scriptCreateVM/createVM.sh $name2 $adressIP2 save $adressIP1
-./config/scriptCreateVM/createVM.sh $name3 $adressIP3 odoo
+./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
+./createVM.sh $name2 $adressIP2 save $adressIP1
+./createVM.sh $name3 $adressIP3 odoo
