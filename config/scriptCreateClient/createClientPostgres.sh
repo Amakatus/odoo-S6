@@ -1,5 +1,9 @@
 #!/bin/bash
 
+touch listeDB.txt
+
+echo db$1 >> ./listeDB.txt
+
 echo Veuillez entrer le même mot de passe client que précèdement
 
 #psql -h localhost -U admin -c "-c '\x' -c
