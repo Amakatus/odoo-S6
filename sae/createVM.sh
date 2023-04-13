@@ -34,12 +34,12 @@ done
 if [[ "$type" = "odoo" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installDocker.sh'"
-    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/traefik.sh'"
+    #ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/traefik.sh'"
 elif [[ "$type" = "postgres" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installPostgres.sh $2 $4 $5'"
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/createSuperUser.sh''"
-    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/save.sh''"
+    #ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/save.sh''"
 elif [[ "$type" = "save" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/rsync.sh $4'"
@@ -49,5 +49,3 @@ fi
 echo "fin"
 
 #modifier le mot de passe root et user
-
-ssh -t user@192.168.194.47 "su -c 'source ./config/scriptCreateVM/traefik.sh'"
