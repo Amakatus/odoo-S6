@@ -1,6 +1,6 @@
 #!/bin/bash
 
-su -u postgres -i
+su postgres
 
 cd
 
