@@ -11,6 +11,6 @@ echo $adressIP1 > /config/ipBD.txt
 echo $adressIP2 > /config/ipSAVE.txt
 echo $adressIP3 > /config/ipODOO.txt
 
-./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
-./createVM.sh $name2 $adressIP2 save $adressIP1
-./createVM.sh $name3 $adressIP3 odoo
+#./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
+#./createVM.sh $name2 $adressIP2 save $adressIP1
+#./createVM.sh $name3 $adressIP3 odoo

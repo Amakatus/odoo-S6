@@ -17,3 +17,10 @@ sed -i -e "s/NOMDB/db$1/g" $1/config/odoo.conf
 
 sed -i -e "s/PORT/$4/g" $1/config/odoo.conf
 sed -i -e "s/EPAL/$1/g" $1/config/odoo.conf
+
+cd $1
+
+echo Lorsque le chargement des addons seront fini faire : CTRL+C
+docker compose run web -i db$1
+
+docker compose run -d

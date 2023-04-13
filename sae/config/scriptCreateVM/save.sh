@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ -a ./listeDB.txt ]
+if [ -a ../infoBD/listeDB.txt ]
 then
-    for nomDB in 'cat listeDB.txt'
+    for nomDB in $(cat listeDB.txt)
     do
         pg_dump -h localhost -U admin --format=custom --file $nomDB.dump $nomDB;
     done
