@@ -1,4 +1,0 @@
-rsync -rza user@192.168.194.26:dbsave/ /home/user/
-
-il faut modifier pghba
-il faut modifier postgres.conf

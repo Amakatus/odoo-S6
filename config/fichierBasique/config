@@ -1,0 +1,6 @@
+Host tunnel
+    HostName xxxx
+    User user
+    ForwardAgent yes
+    LocalForward 0.0.0.0:9091 localhost:8081
+    LocalForward 0.0.0.0:9090 localhost:8080
