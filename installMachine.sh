@@ -13,7 +13,7 @@ echo $adressIP3 > ./config/ip/ipODOO.txt
 
 
 cat ./config/fichierBasique/config >> ~/.ssh/config
-sed -i -e "s/xxxx/$adressIP1/g" ~/.ssh/config
+sed -i -e "s/xxxx/$adressIP3/g" ~/.ssh/config
 
 ./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
 ./createVM.sh $name2 $adressIP2 save $adressIP1
