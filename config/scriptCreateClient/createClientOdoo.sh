@@ -6,9 +6,9 @@ mkdir $1/config
 
 mkdir $1/odoo-data
 
-cp /home/user/config/fichierOdoo/docker-compose.yml $1/
+cp ./config/fichierOdoo/docker-compose.yml $1/
 
-cp /home/user/config/fichierOdoo/odoo.conf $1/config/
+cp ./config/fichierOdoo/odoo.conf $1/config/
 
 sed -i -e "s/IPHOST/$3/g" $1/config/odoo.conf
 sed -i -e "s/NOMUSER/$1/g" $1/config/odoo.conf
@@ -29,5 +29,3 @@ echo Attention de ne pas le faire après les modules
 sleep 10
 
 docker compose run web -i db$1
-
-docker compose run -d
