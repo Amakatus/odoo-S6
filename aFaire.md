@@ -143,8 +143,9 @@ Créé un super utilisateur postgres admin
 
 crée l'utilisateur et la base avant de lancer le client
 
-faire les tunnels 
+
 
 modifier save.sh
 faire un pg dump all
 
+faire les tunnels 
