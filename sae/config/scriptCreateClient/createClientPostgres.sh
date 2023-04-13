@@ -1,12 +1,8 @@
 #!/bin/bash
 
-su postgres
-
-cd
-
 echo Veuillez entrer le même mot de passe client que précèdement
 
-createuser -P -s $1
+sudo su - postgres -c "createuser -P $1"
 
-echo Entrez le mot de passe client
+echo Veuillez entrer le même mot de passe client que précèdement
 createdb -O $1 db$1
