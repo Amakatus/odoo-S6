@@ -9,7 +9,7 @@ services:
   web:
     image: odoo:14.0
     ports:
-      - "80:8069"
+      - "80:PORT"
     volumes:
       - ./odoo-data:/var/lib/odoo
       - ./config:/etc/odoo
@@ -19,7 +19,7 @@ services:
     networks:
       - net_traefik
     labels:
-      - traefik.http.routers.odoo1.rule=Host(`odoo1.ayou25.iutinfo.fr`)
+      - "traefik.http.routers.EPAL.rule=Host(`EPAL.ayou25.iutinfo.fr`)"
 
 networks:
   net_traefik:

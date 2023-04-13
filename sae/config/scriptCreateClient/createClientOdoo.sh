@@ -14,3 +14,6 @@ sed -i -e "s/IPHOST/$3/g" $1/config/odoo.conf
 sed -i -e "s/NOMUSER/$1/g" $1/config/odoo.conf
 sed -i -e "s/MDPUSER/$2/g" $1/config/odoo.conf
 sed -i -e "s/NOMDB/db$1/g" $1/config/odoo.conf
+
+sed -i -e "s/PORT/$4/g" $1/config/odoo.conf
+sed -i -e "s/EPAL/$1/g" $1/config/odoo.conf

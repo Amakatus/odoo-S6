@@ -115,3 +115,45 @@ revenir dans docker-compose
 ```bash
 docker compose run web -d NOMDB
 ```
+docker compose run web -i odoo1db
+
+
+
+
+
+J'ai fait le network
+lancer traefik
+fait odoo
+lancer odoo avec docker compose run web -i db
+docker compose up -d
+
+avec docker compose:
+
+services:
+  droit:
+    image: odoo:14.0
+    user: root
+    volumes:
+      - ./odoo-data:/var/lib/odoo
+    command: chown -R odoo:odoo /var/lib/odoo
+
+  web:
+    image: odoo:14.0
+    ports:
+      - "80:8069"
+    volumes:
+      - ./odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+    depends_on:
+      droit:
+        condition: service_completed_successfully
+    networks:
+      - net_traefik
+    labels:
+      - traefik.http.routers.odoo1.rule=Host(`odoo1.ayou25.iutinfo.fr`)
+
+networks:
+  net_traefik:
+    external: true
+
+```

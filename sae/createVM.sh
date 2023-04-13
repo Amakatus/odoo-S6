@@ -38,8 +38,8 @@ then
 elif [[ "$type" = "postgres" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installPostgres.sh $2 $4 $5'"
-    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/createSuperUser.sh''"
-    #ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/save.sh''"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/createSuperUser.sh'"
+    #ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/save.sh'"
 elif [[ "$type" = "save" ]]
 then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/rsync.sh $4'"
