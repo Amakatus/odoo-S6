@@ -1,13 +1,9 @@
 #!/bin/bash
 
 echo Veuillez entrer le même mot de passe client que précèdement
-echo Veuilles entrer les commandes suivante manuellement et de mettre le même mot de passe client inséré précèdement
-echo "cd"
-echo "createuser -P $1"
-echo Faites de même après avoir inséré la commande précèdente
-echo "createdb -O $1 db$1"
-echo Puis presser CTRL+D afin de quitter
 
-su - postgres
+#psql -h localhost -U admin -c "-c '\x' -c
+su - postgres -c '\x' -c "createuser -P $1"
 
-
+echo Veuillez entrer le même mot de passe client que précèdement
+su - postgres -c '\x' -c "createdb -O $1 db$1"
