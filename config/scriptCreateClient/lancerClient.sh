@@ -4,4 +4,4 @@ cd $1
 
 docker compose down
 
-docker compose run -d
+docker compose up -d
