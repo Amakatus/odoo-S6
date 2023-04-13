@@ -39,7 +39,7 @@ elif [[ "$type" = "postgres" ]]
 then
     ssh -t user@$2 "su -c 'source ./installPostgres.sh $2 $4 $5'"
     ssh -t user@$2 "su -c 'source ./createSuperUser.sh'"
-    #ssh -t user@$2 "su -c 'source ./installSave.sh'"
+    ssh -t user@$2 "su -c 'source ./installSave.sh'"
 elif [[ "$type" = "save" ]]
 then
     ssh -t user@$2 "su -c 'source ./rsync.sh $4'"
