@@ -24,7 +24,9 @@ ssh-copy-id user@$ipMachine
 scp -r ./config user@$ipMachine:./
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $1 $2'"
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie2.sh'"
-vmiut restart $1
+vmiut stop $1
+vmiut demarrer $1
+
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
 do
