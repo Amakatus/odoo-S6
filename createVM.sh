@@ -21,10 +21,25 @@ echo "Répondre yes et insérer le mot de passe utilisateur  afin de continuer l
 
 ssh-copy-id user@$ipMachine
 
+<<<<<<< HEAD:createVM.sh
 scp -r ./config user@$ipMachine:./
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $1 $2'"
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie2.sh'"
+=======
+<<<<<<< HEAD:sae/createVM.sh
+scp -r ./config user@$ipMachine:./
+ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $1 $2'"
+ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie2.sh'"
+vmiut stop $1
+vmiut demarrer $1
+
+=======
+scp -r ../../config user@$ipMachine:./
+ssh -t user@$ipMachine "su -c 'source ./configPartie1.sh $1 $2'"
+ssh -t user@$ipMachine "su -c 'source ./configPartie2.sh'"
+>>>>>>> 311239d9a93594571d3d8c9d7d850dc4e0f71755:config/scriptCreateVM/createVM.sh
 vmiut restart $1
+>>>>>>> 8cd2735e04764bb00906355ebc77dc3595405e79:config/scriptCreateVM/createVM.sh
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
 do
