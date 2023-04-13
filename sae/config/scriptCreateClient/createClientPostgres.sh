@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ../../../../
 
 echo Veuillez entrer le même mot de passe client que précèdement
 
