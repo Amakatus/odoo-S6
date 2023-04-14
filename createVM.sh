@@ -45,7 +45,7 @@ then
     ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installSave.sh'"
 elif [[ "$type" = "save" ]]
 then
-    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/rsync.sh $4'"
+    ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/installRSYNC.sh $4'"
 else
     echo "probleme"
 fi

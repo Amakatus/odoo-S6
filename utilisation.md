@@ -22,17 +22,7 @@ Il faudra rentrer le mot de passe `root`.
 ```
 Il faudra rentrer la lettre `Y` afin d'accepter l'installation.
 
-### 1) Utilisation du script `createClient.sh`
-
-Ce script sert à créer un client il se lance de la manière suivante :
-
-```bash
-./createClient.sh
-```
-
-Il faut ensuite renseigner le `nom` et son `mot de passe` du client ainsi que le `port` utilisé.
-
-### 2) Utilisation du script `installVM.sh`
+### 1) Utilisation du script `installVM.sh`
 
 Ce script sert à créer les machines virtuelles nécéssaires à l'architecture finale.
 
@@ -44,6 +34,16 @@ Il faut ensuite renseigner :
  - Le `nom` et l'`ip` de la machine **base de données**.
  - Le `nom` et l'`ip` de la machine **de sauvegarde**.
  - Le `nom` et l'`ip` de la machine **Odoo** (Qui accueillera aussi le reverse proxy)
+
+### 2) Utilisation du script `createClient.sh`
+
+Ce script sert à créer un client il se lance de la manière suivante :
+
+```bash
+./createClient.sh
+```
+
+Il faut ensuite renseigner le `nom` et son `mot de passe` du client ainsi que le `port` utilisé.
 
 ### 3) Utilisation du script `reset.sh` 
 
