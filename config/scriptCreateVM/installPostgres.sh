@@ -13,7 +13,3 @@ sed -i -e "s/#listen_addresses.=.'localhost'/listen_addresses = 'localhost,$1,$2
 systemctl restart postgresql
 
 mkdir /home/user/dbsave
-
-touch .pgpass
-
-mv .pgpass /var/lib/postgresql/
