@@ -25,7 +25,7 @@ echo Lorsque le chargement des addons seront fini faire : CTRL+C
 echo Lorsque le chargement des addons seront fini faire : CTRL+C
 echo Lorsque le chargement des addons seront fini faire : CTRL+C
 echo Lorsque le chargement des addons seront fini faire : CTRL+C
-echo Attention de ne pas le faire après les modules
+echo Attention de ne pas le faire après le chargement des modules
 
 sleep 10
 
