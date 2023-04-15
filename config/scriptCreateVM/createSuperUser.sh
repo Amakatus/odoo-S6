@@ -8,6 +8,6 @@ echo Entrer le mot de passe du compte postgres admin "(" Attention vous en aurez
 
 echo "Entrer le mot de passe du compte postgres admin:" && read mdpAdmin
 
-echo mdpAdmin > .secret
+echo $mdpAdmin > .secret
 
 su - postgres -c '\x' -c "createuser -P -s admin"

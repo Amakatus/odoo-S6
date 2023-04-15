@@ -16,6 +16,4 @@ mkdir /home/user/dbsave
 
 touch .pgpass
 
-chmod 0600 .pgpass
-
 mv .pgpass /var/lib/postgresql/
