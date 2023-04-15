@@ -26,8 +26,10 @@ ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie2.sh'"
 vmiut stop $1
 vmiut demarrer $1
+vmiut demarrer $1
+vmiut demarrer $1
 
-vmiut restart $1
+sleep 15
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
 do

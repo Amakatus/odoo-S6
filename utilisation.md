@@ -22,6 +22,12 @@ Il faudra rentrer le mot de passe `root`.
 ```
 Il faudra rentrer la lettre `Y` afin d'accepter l'installation.
 
+- Si le terminal affiche :
+```bash
+[yes/no/fingerprint]
+```
+Il faudra rentrer la lettre `yes` afin d'accepter la copie de la clé ssh.
+
 ### 1) Utilisation du script `installVM.sh`
 
 Ce script sert à créer les machines virtuelles nécéssaires à l'architecture finale.
@@ -51,3 +57,15 @@ Ce script permets de reset la configuration afin de repartir de zéro en cas d'e
 ```bash
 ./reset.sh
 ```
+
+
+Entrer le mot de passe du compte postgres admin:
+admin
+Saisir le mot de passe pour le nouveau rôle :
+Saisir le mot de passe à nouveau :
+
+
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
