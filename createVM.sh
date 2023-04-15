@@ -27,6 +27,8 @@ vmiut demarrer $1
 vmiut demarrer $1
 vmiut demarrer $1
 
+echo "Veuillez patienter quelques instants"
+
 sleep 25
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
