@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#Argument: nom ip type disque
-
 #On crée une machine virtuel avec la bonne taille de disque
 vmiut creer $1 -d /home/public/vm/disque-bullseye-11.1-20go.vdi
 vmiut demarrer $1
@@ -19,7 +17,7 @@ type=$3
 
 echo "Répondre yes et insérer le mot de passe utilisateur  afin de continuer l'installation lorsque le terminal vous le demandera"
 
-ssh-copy-id user@$ipMachine
+#ssh-copy-id user@$ipMachine
 
 scp -r ./config user@$ipMachine:./
 ssh -t user@$ipMachine "su -c 'source ./config/scriptCreateVM/configPartie1.sh $1 $2'"
@@ -52,5 +50,3 @@ else
     echo "probleme"
 fi
 echo "fin"
-
-#modifier le mot de passe root et user

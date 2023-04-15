@@ -26,3 +26,8 @@ sed -i -e "s/xxxx/$adressIP3/g" ~/.ssh/config
 ./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
 ./createVM.sh $name2 $adressIP2 save $adressIP1
 ./createVM.sh $name3 $adressIP3 odoo
+
+ssh -t user@$adressIP1 "su -c 'source ./config/scriptCreateVM/securite.sh $name1'"
+ssh -t user@$adressIP2 "su -c 'source ./config/scriptCreateVM/securite.sh $name2'"
+ssh -t user@$adressIP3 "su -c 'source ./config/scriptCreateVM/securite.sh $name3'"
+
