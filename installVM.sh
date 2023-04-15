@@ -12,7 +12,7 @@ echo $adressIP2 > ./config/ip/ipSAVE.txt
 echo $adressIP3 > ./config/ip/ipODOO.txt
 
 
-cat ./config/fichierBasique/config >> ~/.ssh/config
+cat ./config/fichierBasique/config > ~/.ssh/config
 sed -i -e "s/xxxx/$adressIP3/g" ~/.ssh/config
 
 ./createVM.sh $name1 $adressIP1 postgres $adressIP2 $adressIP3
