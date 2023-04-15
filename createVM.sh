@@ -51,4 +51,7 @@ then
 else
     echo "probleme"
 fi
+
+ssh -t user@$2 "su -c 'source ./config/scriptCreateVM/securite.sh $1'"
+
 echo "fin"

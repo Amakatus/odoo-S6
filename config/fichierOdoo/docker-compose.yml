@@ -13,6 +13,7 @@ services:
     volumes:
       - ./odoo-data:/var/lib/odoo
       - ./config:/etc/odoo
+    restart: always
     depends_on:
       droit:
         condition: service_completed_successfully

@@ -6,6 +6,7 @@ services:
     image: traefik:v2.9
     # Enables the web UI and tells Traefik to listen to docker
     command: --api.insecure=true --providers.docker
+    restart: always
     ports:
       # The HTTP port
       - "8081:80"
