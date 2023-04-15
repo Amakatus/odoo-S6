@@ -4,6 +4,8 @@ touch listeDB.txt
 
 echo db$1 >> ./listeDB.txt
 
+echo localhost:5432:db$1:admin:$(cat .secret) >> /var/lib/postgresql/.pgpass
+
 echo "host    db$1     $1     $2/24       md5" >> /etc/postgresql/13/main/pg_hba.conf
 
 systemctl restart postgresql
