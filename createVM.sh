@@ -27,11 +27,11 @@ vmiut demarrer $1
 vmiut demarrer $1
 vmiut demarrer $1
 
-sleep 15
+sleep 25
 
 until ssh user@$2 "su -c 'echo Nouvelle IP ajouté'"
 do
-    sleep 10
+    sleep 5
 done
 
 if [[ "$type" = "odoo" ]]
