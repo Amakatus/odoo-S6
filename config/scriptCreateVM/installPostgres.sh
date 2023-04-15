@@ -9,7 +9,9 @@ touch .pgpass
 
 chmod 0600 .pgpass
 
-mv .pgpass /var/lib/postgresql/
+cp .pgpass /var/lib/postgresql/
+
+cp .pgpass /
 
 #echo "host    all     all     $2/24       md5" >> /etc/postgresql/13/main/pg_hba.conf
 #echo "host    all     all     $3/24       md5" >> /etc/postgresql/13/main/pg_hba.conf
