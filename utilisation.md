@@ -69,3 +69,10 @@ Enter file in which to save the key (/root/.ssh/id_rsa):
 Created directory '/root/.ssh'.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
+
+VBoxManage: error: The machine 'odooT' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component MachineWrap, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), ComSafeArrayAsInParam(aBstrEnv), progress.asOutParam())" at line 726 of file VBoxManageMisc.cpp
+VBoxManage: error: The machine 'odooT' is already locked by a session (or being locked or unlocked)
+VBoxManage: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), component MachineWrap, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "LaunchVMProcess(a->session, sessionType.raw(), ComSafeArrayAsInParam(aBstrEnv), progress.asOutParam())" at line 726 of file VBoxManageMisc.cpp

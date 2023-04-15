@@ -4,6 +4,7 @@ touch listeDB.txt
 
 echo db$1 >> ./listeDB.txt
 
+echo "host    postgres     $1     $2/24       md5" >> /etc/postgresql/13/main/pg_hba.conf
 echo "host    db$1     $1     $2/24       md5" >> /etc/postgresql/13/main/pg_hba.conf
 
 systemctl restart postgresql

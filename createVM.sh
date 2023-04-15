@@ -9,7 +9,7 @@ vmiut demarrer $1
 #Tant que l'adresse ip n'est pas affecté, on attend
 while [[ -z "$(vmiut info $1 | grep ip-possible= | cut -c 13- )" ]];
 do
-    sleep 1
+    sleep 5
 done
 
 #On récupére l'adresse ip de la machine
