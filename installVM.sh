@@ -1,3 +1,5 @@
+echo "Nom de votre machine Physique (ou virtuelle):" && read namePhy
+
 echo "Nom machine base de donnee:" && read name1
 echo "IP machine base de donnee (sans le netmask):" && read adressIP1
 
@@ -7,9 +9,15 @@ echo "IP machine de sauvegarde (sans le netmask):" && read adressIP2
 echo "Nom machine odoo:" && read name3
 echo "IP machine odoo (sans le netmask):" && read adressIP3
 
+echo $namePhy > ./config/machinePhysique/virt.txt
+
 echo $adressIP1 > ./config/ip/ipBD.txt
 echo $adressIP2 > ./config/ip/ipSAVE.txt
 echo $adressIP3 > ./config/ip/ipODOO.txt
+
+echo $name1 > ./config/nom/nomVM.txt
+echo $name2 >> ./config/nom/nomVM.txt
+echo $name3 >> ./config/nom/nomVM.txt
 
 
 cat ./config/fichierBasique/config > ~/.ssh/config

@@ -19,7 +19,7 @@ services:
     networks:
       - net_traefik
     labels:
-      - "traefik.http.routers.EPAL.rule=Host(`EPAL.ayou25.iutinfo.fr`)"
+      - "traefik.http.routers.EPAL.rule=Host(`EPAL.VIRT.iutinfo.fr`)"
 
 networks:
   net_traefik:
